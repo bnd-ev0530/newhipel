@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 카카오톡 인스타그램 미리보기(meta 정보) 설정 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NEWHIPBOY" />
+    <meta property="og:description" content="Get in the room 810!" />
+    <meta property="og:image" content="Thumbnail.JPG" />
+    <meta property="og:url" content="https://newhipboy.com" />
+    <!-- 트위터 미리보기(meta 정보) 설정 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NEWHIPBOY" />
+    <meta name="twitter:description" content="Get in the room 810!" />
+    <meta name="twitter:image" content="TwitterThumbnail.JPG" />
+    <meta name="twitter:url" content="https://newhipboy.com" />
     <title>Weverse Page</title>
-</head>
-    <style>
-        body {
-          margin: 0;
-          padding: 0;
-          font-family: Arial, sans-serif;
-          overflow-x: hidden;
-        }
-		
-	    .scrollable-content img {
-          width: 100%;
-          height: 100%;
-          margin-bottom: 20px;
-		  z-index: 1;
-        }
-
-		.twitterphone-image {
-          position: fixed;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-          max-width: 100vw;
-          height: 100vh;
-          object-fit: cover;
-          z-index: 2;
-        }
-      </style>   
-	  <div class="scrollable-content">
-        <img src="weversemain1.PNG" alt="Scrollable Content Image">
-		<img src="weversemain2.PNG" alt="Scrollable Content Image">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/weverse.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="mobile_btn">
+      <input type="checkbox" id="hamburger" />
+      <label for="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="sidebar">
+        <button class="close_btn" id="closeButton">Close</button>
+        <hr />
+        <ul class="nav_mobile">
+          <li><a href="/">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="twitter.html">Twitter</a></li>
+          <li><a href="weverse.html">Weverse</a></li>
+          <li><a href="fancam.html">Fancam</a></li>
+          <li><a href="interview.html">Interview</a></li>
+          <li><a href="gacha.html">Gacha</a></li>
+          <li><a href="card">Card</a></li>
+        </ul>
       </div>
-	  
-	  <img class="twitterphone-image" src="twitterphone.PNG" alt="twitterphone-image">
+    </div>
+    <div id="weverseContainer">
+      <div class="scrollable-content">
+        <img src="weversemain1.PNG" alt="Scrollable Content Image" />
+        <img src="weversemain2.PNG" alt="Scrollable Content Image" />
+      </div>
+
+      <a href="weversepage.html">
+        <img
+          class="weversephone-image"
+          src="weversephone.PNG"
+          alt="weversephone-image"
+        />
+      </a>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
 </html>

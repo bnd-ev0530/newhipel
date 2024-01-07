@@ -1,297 +1,185 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 카카오톡 인스타그램 미리보기(meta 정보) 설정 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NEWHIPBOY" />
+    <meta property="og:description" content="Get in the room 810!" />
+    <meta property="og:image" content="Thumbnail.JPG" />
+    <meta property="og:url" content="https://newhipboy.com" />
+    <!-- 트위터 미리보기(meta 정보) 설정 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NEWHIPBOY" />
+    <meta name="twitter:description" content="Get in the room 810!" />
+    <meta name="twitter:image" content="TwitterThumbnail.JPG" />
+    <meta name="twitter:url" content="https://newhipboy.com" />
     <title>2306weverse</title>
-	
-	<script>
-        function toggleMenu() {
-            var sidebar = document.querySelector('.sidebar');
-            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
-        }
-		
-		function changePage(page) {
-        console.log("Change to " + page + " page");
-
-        var contentContainer = document.getElementById("contentContainer");
-        var profileContainer = document.getElementById("profileContainer");
-		var twitterContainer = document.getElementById("twitterContainer");
-        var weverseContainer = document.getElementById("weverseContainer");
-		var fancamContainer = document.getElementById("fancamContainer");
-        var interviewContainer = document.getElementById("interviewContainer");
-		var gachaContainer = document.getElementById("gachaContainer");
-		var mainVideo = document.getElementById("mainVideo");
-
-        switch (page) {
-            case 'profile':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "block";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-			case 'twitter':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "block";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-            case 'weverse':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "block";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-			case 'fancam':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "block";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-            case 'interview':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "block";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-			case 'gacha':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "block";
-				mainVideo.style.display = "none";
-                break;
-            default:
-                contentContainer.style.display = "block";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-                weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-                interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "block";
-                break;
-        }
-    }
-    </script>
-	
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-			font-family: Arial, sans-serif;
-            margin: 0; /* 여백을 0으로 설정 */
-        }
-
-        .image-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            overflow-y: scroll;
-	height: auto;
-            max-height: 100vh;
-            justify-content: center; /* 가로 중앙 정렬 추가 */
-            align-items: center; /* 세로 중앙 정렬 추가 */
-			margin-bottom: 50px;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-            display: block;
-        }
-
-        .image-container a {
-            display: block; /* 링크 간 여백 제거를 위해 추가 */
-        }
-
-        .mobile_btn {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-        }
-
-        #hamburger {
-            display: none;
-        }
-
-        label {
-            display: block;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        label span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: #4169e1;
-            margin: 5px 0;
-            transition: 0.4s;
-            border-top: none;
-        }
-
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #ffffff;
-            overflow-x: hidden;
-            transition: 0.5s;
-            text-align: center;
-            border-top: none;
-			margin-left: 0;
-        }
-
-        .sidebar h2 {
-            color: #5f9ea0;
-            border-top: none;
-        }
-
-        .nav_mobile {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 23px; /* 글자 크기 조절 */
-            font-weight: bold; /* 굵기 조절 */
-            border-top: none;
-        }
-
-        .nav_mobile li {
-            padding: 15px;
-            border-bottom: none;
-        }
-
-        .nav_mobile a {
-            color: #000000;
-            text-decoration: none;
-            border-top: none;
-        }
-		.sidebar hr {
-             margin: 0;
-        }
-    </style>
-</head>
-<body>
-
-<div class="mobile_btn">
-    <input type="checkbox" id="hamburger" onchange="toggleMenu()" />
-    <label for="hamburger">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/weverse_detail.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="mobile_btn">
+      <input type="checkbox" id="hamburger" />
+      <label for="hamburger">
         <span></span>
         <span></span>
         <span></span>
-    </label>
-    <div class="sidebar">
-        <hr>
+      </label>
+      <div class="sidebar">
+        <button class="close_btn" id="closeButton">Close</button>
+        <hr />
         <ul class="nav_mobile">
-		    <li><a href="index.html">Home</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="twitter.html">Twitter</a></li>
+          <li><a href="weverse.html">Weverse</a></li>
+          <li><a href="fancam.html">Fancam</a></li>
+          <li><a href="interview.html">Interview</a></li>
+          <li><a href="gacha.html">Gacha</a></li>
+          <li><a href="card">Card</a></li>
         </ul>
+      </div>
     </div>
-</div>
 
     <div class="image-container">
-        <a href="https://weverse.io/boynextdoor/artist/1-119925894?hl=ko" target="_blank">
-            <img src="w230601.jpg" alt="Image 1">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/0-119945248?hl=ko" target="_blank">
-            <img src="w230602.jpg" alt="Image 2">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/0-119986279?hl=ko" target="_blank">
-            <img src="w230603.jpg" alt="Image 3">
-        </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/1-119925894?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230601.jpg" alt="Image 1" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/0-119945248?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230602.jpg" alt="Image 2" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/0-119986279?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230603.jpg" alt="Image 3" />
+      </a>
 
-        <a href="https://weverse.io/boynextdoor/artist/4-120697349?hl=ko" target="_blank">
-            <img src="w230604.jpg" alt="Image 1">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/4-120801017?hl=ko" target="_blank">
-            <img src="w230605.jpg" alt="Image 2">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/2-120161831?hl=ko" target="_blank">
-            <img src="w230607.jpg" alt="Image 3">
-        </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/4-120697349?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230604.jpg" alt="Image 1" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/4-120801017?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230605.jpg" alt="Image 2" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/2-120161831?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230607.jpg" alt="Image 3" />
+      </a>
 
-        <a href="https://weverse.io/boynextdoor/artist/3-121067227?hl=ko" target="_blank">
-            <img src="w230608.jpg" alt="Image 1">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/3-121153591?hl=ko" target="_blank">
-            <img src="w230609.jpg" alt="Image 2">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/3-121292194?hl=ko" target="_blank">
-            <img src="w230610.jpg" alt="Image 3">
-        </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-121067227?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230608.jpg" alt="Image 1" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-121153591?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230609.jpg" alt="Image 2" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-121292194?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230610.jpg" alt="Image 3" />
+      </a>
 
-        <a href="https://weverse.io/boynextdoor/artist/4-121357744?hl=ko" target="_blank">
-            <img src="w230611.jpg" alt="Image 1">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/3-121430759?hl=ko" target="_blank">
-            <img src="w230612.jpg" alt="Image 2">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/3-121626724?hl=ko" target="_blank">
-            <img src="w230613.jpg" alt="Image 3">
-        </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/4-121357744?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230611.jpg" alt="Image 1" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-121430759?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230612.jpg" alt="Image 2" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-121626724?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230613.jpg" alt="Image 3" />
+      </a>
 
-        <a href="https://weverse.io/boynextdoor/artist/1-120658380?hl=ko" target="_blank">
-            <img src="w230616.jpg" alt="Image 1">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/3-122236519?hl=ko" target="_blank">
-            <img src="w230619.jpg" alt="Image 2">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/4-122426337?hl=ko" target="_blank">
-            <img src="w230621.jpg" alt="Image 3">
-        </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/1-120658380?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230616.jpg" alt="Image 1" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-122236519?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230619.jpg" alt="Image 2" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/4-122426337?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230621.jpg" alt="Image 3" />
+      </a>
 
-        <a href="https://weverse.io/boynextdoor/artist/3-122583918?hl=ko" target="_blank">
-            <img src="w230623.jpg" alt="Image 1">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/2-121031667?hl=ko" target="_blank">
-            <img src="w230624.jpg" alt="Image 2">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/3-122809779?hl=ko" target="_blank">
-            <img src="w230626.jpg" alt="Image 3">
-        </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-122583918?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230623.jpg" alt="Image 1" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/2-121031667?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230624.jpg" alt="Image 2" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-122809779?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230626.jpg" alt="Image 3" />
+      </a>
 
-        <a href="https://weverse.io/boynextdoor/artist/3-122809779?hl=ko" target="_blank">
-            <img src="w230629.jpg" alt="Image 1">
-        </a>
-        <a href="https://weverse.io/boynextdoor/artist/3-123324179?hl=ko" target="_blank">
-            <img src="w230630.jpg" alt="Image 2">
-        </a>
-        <a href="https://weverse.io/boynextdoor/feed" target="_blank">
-            <img src="tblank.JPG" alt="Image 3">
-        </a>
-		
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-122809779?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230629.jpg" alt="Image 1" />
+      </a>
+      <a
+        href="https://weverse.io/boynextdoor/artist/3-123324179?hl=ko"
+        target="_blank"
+      >
+        <img src="images/weverse/w230630.jpg" alt="Image 2" />
+      </a>
+      <a href="https://weverse.io/boynextdoor/feed" target="_blank">
+        <img src="tblank.JPG" alt="Image 3" />
+      </a>
     </div>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
-
-
-
-

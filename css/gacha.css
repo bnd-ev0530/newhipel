@@ -1,0 +1,20 @@
+#gif {
+  width: auto;
+  height: 100%;
+  max-height: 100vh;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#overlayImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+  transform: translate(-50%, -50%); /* 화면 정중앙에 위치하도록 설정 */
+  display: none;
+  margin: 0 auto;
+}

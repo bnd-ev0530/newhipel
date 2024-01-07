@@ -1,376 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 카카오톡 인스타그램 미리보기(meta 정보) 설정 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NEWHIPBOY" />
+    <meta property="og:description" content="Get in the room 810!" />
+    <meta property="og:image" content="Thumbnail.JPG" />
+    <meta property="og:url" content="https://newhipboy.com" />
+    <!-- 트위터 미리보기(meta 정보) 설정 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NEWHIPBOY" />
+    <meta name="twitter:description" content="Get in the room 810!" />
+    <meta name="twitter:image" content="TwitterThumbnail.JPG" />
+    <meta name="twitter:url" content="https://newhipboy.com" />
     <title>Fancam</title>
-	
-	<script>
-        function toggleMenu() {
-            var sidebar = document.querySelector('.sidebar');
-            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
-        }
-		
-		function changePage(page) {
-        console.log("Change to " + page + " page");
-
-        var contentContainer = document.getElementById("contentContainer");
-        var profileContainer = document.getElementById("profileContainer");
-		var twitterContainer = document.getElementById("twitterContainer");
-        var weverseContainer = document.getElementById("weverseContainer");
-		var fancamContainer = document.getElementById("fancamContainer");
-        var interviewContainer = document.getElementById("interviewContainer");
-		var gachaContainer = document.getElementById("gachaContainer");
-		var mainVideo = document.getElementById("mainVideo");
-
-        switch (page) {
-            case 'profile':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "block";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-			case 'twitter':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "block";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-            case 'weverse':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "block";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-			case 'fancam':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "block";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-            case 'interview':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "block";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "none";
-                break;
-			case 'gacha':
-                contentContainer.style.display = "none";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-				weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-				interviewContainer.style.display = "none";
-				gachaContainer.style.display = "block";
-				mainVideo.style.display = "none";
-                break;
-            default:
-                contentContainer.style.display = "block";
-                profileContainer.style.display = "none";
-				twitterContainer.style.display = "none";
-                weverseContainer.style.display = "none";
-				fancamContainer.style.display = "none";
-                interviewContainer.style.display = "none";
-				gachaContainer.style.display = "none";
-				mainVideo.style.display = "block";
-                break;
-        }
-    }
-    </script>
-	
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-			font-family: Arial, sans-serif;
-            margin: 0; /* 여백을 0으로 설정 */
-        }
-		
-       .scrollable-content {
-            display: flex;
-            flex-wrap: wrap;		
-            justify-content: space-around;
-        }
-  
-
-  
-        .scrollable-content .scrollable-img {
-             width: 100%;
-             height: 100%;
-        }
-	
-	   
-
-        .mobile_btn {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-        }
-
-        #hamburger {
-            display: none;
-        }
-
-        label {
-            display: block;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        label span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: #4169e1;
-            margin: 5px 0;
-            transition: 0.4s;
-            border-top: none;
-        }
-
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #ffffff;
-            overflow-x: hidden;
-            transition: 0.5s;
-            text-align: center;
-            border-top: none;
-        }
-
-        .sidebar h2 {
-            color: #5f9ea0;
-            border-top: none;
-        }
-
-        .nav_mobile {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 23px; /* 글자 크기 조절 */
-            font-weight: bold; /* 굵기 조절 */
-            border-top: none;
-        }
-
-        .nav_mobile li {
-            padding: 15px;
-            border-bottom: none;
-        }
-
-        .nav_mobile a {
-            color: #000000;
-            text-decoration: none;
-            border-top: none;
-        }
-		
-		 #no-mobile {
-		position: absolute;
-		top: 0;
-		z-index: 99;
-		width: 100vw;
-		height: 100vh;
-		background-color: white;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-weight: 600;
-		font-size: 20px;
-		}
-		
-		@media screen and (max-width: 645px){
-		#no-mobile {
-		display: none;
-		}
-		}
-    </style>
-</head>
-<body>
-
-<div class="mobile_btn">
-    <input type="checkbox" id="hamburger" onchange="toggleMenu()" />
-    <label for="hamburger">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/fancam.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="mobile_btn">
+      <input type="checkbox" id="hamburger" />
+      <label for="hamburger">
         <span></span>
         <span></span>
         <span></span>
-    </label>
-    <div class="sidebar">
-        <hr>
+      </label>
+      <div class="sidebar">
+        <button class="close_btn" id="closeButton">Close</button>
+        <hr />
         <ul class="nav_mobile">
-		    <li><a href="index.html">Home</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="twitter.html">Twitter</a></li>
+          <li><a href="weverse.html">Weverse</a></li>
+          <li><a href="fancam.html">Fancam</a></li>
+          <li><a href="interview.html">Interview</a></li>
+          <li><a href="gacha.html">Gacha</a></li>
+          <li><a href="card">Card</a></li>
         </ul>
+      </div>
     </div>
-</div>	
 
-<div id="no-mobile">
-    <span>모바일 환경에 최적화된 웹사이트입니다.</span>
-	</div>
-	
+    <div id="no-mobile">
+      <span>모바일 환경에 최적화된 웹사이트입니다.</span>
+    </div>
 
-  <div class="scrollable-content">
-    <a href="https://www.youtube.com/watch?v=10SE_iJJF9M" target="_blank">
-        <img class="scrollable-img" src="fancam1.jpg" alt="Fancam Image 1">
-    </a>
-    <a href="https://www.youtube.com/watch?v=elfki-gIyJs" target="_blank">
-        <img class="scrollable-img" src="fancam2.jpg" alt="Fancam Image 2">
-    </a>
-	<a href="https://www.youtube.com/watch?v=x_Iwj5zMu6I" target="_blank">
-        <img class="scrollable-img" src="fancam3.jpg" alt="Fancam Image 3">
-    </a>
-		<a href="https://www.youtube.com/watch?v=lZcqGxQBJuo" target="_blank">
-        <img class="scrollable-img" src="fancam4.jpg" alt="Fancam Image 4">
-    </a>
-	<a href="https://www.youtube.com/watch?v=6B_py6w-3PE" target="_blank">
-        <img class="scrollable-img" src="fancam5.jpg" alt="Fancam Image 5">
-    </a>
-	<a href="https://www.youtube.com/watch?v=UkxSNLRqJ7s" target="_blank">
-        <img class="scrollable-img" src="fancam6.jpg" alt="Fancam Image 6">
-    </a>
-	<a href="https://www.youtube.com/watch?v=ShkS_yO40oQ'" target="_blank">
-        <img class="scrollable-img" src="fancam7.jpg" alt="Fancam Image 7">
-    </a>
-	<a href="https://www.youtube.com/watch?v=KPU23-T2y6I" target="_blank">
-        <img class="scrollable-img" src="fancam8.jpg" alt="Fancam Image 8">
-    </a>
-	<a href="https://www.youtube.com/watch?v=GPcsnWvRv3U" target="_blank">
-        <img class="scrollable-img" src="fancam9.jpg" alt="Fancam Image 9">
-    </a>
-	<a href="https://www.youtube.com/watch?v=tfnEmJBQYbw" target="_blank">
-        <img class="scrollable-img" src="fancam10.jpg" alt="Fancam Image 10">
-    </a>
-	<a href="https://www.youtube.com/watch?v=4woSpoYNiFk" target="_blank">
-        <img class="scrollable-img" src="fancam11.jpg" alt="Fancam Image 11">
-    </a>
-	<a href="https://www.youtube.com/watch?v=StaKxxSnUD8" target="_blank">
-        <img class="scrollable-img" src="fancam12.jpg" alt="Fancam Image 12">
-    </a>
-	<a href="https://www.youtube.com/watch?v=IJHqvfauu2M" target="_blank">
-        <img class="scrollable-img" src="fancam13.jpg" alt="Fancam Image 13">
-    </a>
-	<a href="https://www.youtube.com/watch?v=4OD5qteK6HE" target="_blank">
-        <img class="scrollable-img" src="fancam14.jpg" alt="Fancam Image 14">
-    </a>
-	<a href="https://www.youtube.com/watch?v=eIaTOYQxuiE" target="_blank">
-        <img class="scrollable-img" src="fancam15.jpg" alt="Fancam Image 15">
-    </a>
-	<a href="https://www.youtube.com/watch?v=oQ6cUaRFds0" target="_blank">
-        <img class="scrollable-img" src="fancam16.jpg" alt="Fancam Image 16">
-    </a>
-	<a href="https://www.youtube.com/watch?v=9Wo18DywxAQ" target="_blank">
-        <img class="scrollable-img" src="fancam17.jpg" alt="Fancam Image 17">
-    </a>
-	<a href="https://www.youtube.com/watch?v=7eAj6QPdl4Q" target="_blank">
-        <img class="scrollable-img" src="fancam18.jpg" alt="Fancam Image 18">
-    </a>
-	<a href="https://www.youtube.com/watch?v=wH82Vk7GjYk" target="_blank">
-        <img class="scrollable-img" src="fancam19.jpg" alt="Fancam Image 19">
-    </a>
-	<a href="https://www.youtube.com/watch?v=pWyNm3oiwZo" target="_blank">
-        <img class="scrollable-img" src="fancam20.jpg" alt="Fancam Image 20">
-    </a>
-	<a href="https://www.youtube.com/watch?v=wJBZ54iJHm4" target="_blank">
-        <img class="scrollable-img" src="fancam21.jpg" alt="Fancam Image 21">
-    </a>
-	<a href="https://www.youtube.com/watch?v=krljbcXvjzs" target="_blank">
-        <img class="scrollable-img" src="fancam22.jpg" alt="Fancam Image 22">
-    </a>
-	<a href="https://www.youtube.com/watch?v=gMvyk9SLdX4" target="_blank">
-        <img class="scrollable-img" src="fancam23.jpg" alt="Fancam Image 23">
-    </a>
-	<a href="https://www.youtube.com/watch?v=XpiXwAox8HY" target="_blank">
-        <img class="scrollable-img" src="fancam24.jpg" alt="Fancam Image 24">
-    </a>
-	<a href="https://www.youtube.com/watch?v=ZklZ0887FsQ" target="_blank">
-        <img class="scrollable-img" src="fancam25.jpg" alt="Fancam Image 25">
-    </a>
-	<a href="https://www.youtube.com/watch?v=oGhQ0aXsPtY" target="_blank">
-        <img class="scrollable-img" src="fancam26.jpg" alt="Fancam Image 26">
-    </a>
-	<a href="https://www.youtube.com/watch?v=XVfdqLrF_X8" target="_blank">
-        <img class="scrollable-img" src="fancam27.jpg" alt="Fancam Image 27">
-    </a>
-	<a href="https://www.youtube.com/watch?v=vo1wMe1ukCY" target="_blank">
-        <img class="scrollable-img" src="fancam28.jpg" alt="Fancam Image 28">
-    </a>
-	<a href="https://www.youtube.com/watch?v=1p_8pfqWWCg" target="_blank">
-        <img class="scrollable-img" src="fancam29.jpg" alt="Fancam Image 29">
-    </a>
-	<a href="https://www.youtube.com/watch?v=i1FSc3zQHRk" target="_blank">
-        <img class="scrollable-img" src="fancam30.jpg" alt="Fancam Image 30">
-    </a>
-	<a href="https://www.youtube.com/watch?v=b1MJnQy6u5I" target="_blank">
-        <img class="scrollable-img" src="fancam31.jpg" alt="Fancam Image 31">
-    </a>
-	<a href="https://www.youtube.com/watch?v=xSycd-0Nkp4" target="_blank">
-        <img class="scrollable-img" src="fancam32.jpg" alt="Fancam Image 32">
-    </a>
-	<a href="https://www.youtube.com/watch?v=bxxCbRKfjHs" target="_blank">
-        <img class="scrollable-img" src="fancam33.jpg" alt="Fancam Image 33">
-    </a>
-	<a href="https://www.youtube.com/watch?v=yU2pxgFV4ko" target="_blank">
-        <img class="scrollable-img" src="fancam34.jpg" alt="Fancam Image 34">
-    </a>
-	<a href="https://www.youtube.com/watch?v=tSVFzRv7jYA" target="_blank">
-        <img class="scrollable-img" src="fancam35.jpg" alt="Fancam Image 35">
-    </a>
-	<a href="https://www.youtube.com/watch?v=JahA0jrhQIk" target="_blank">
-        <img class="scrollable-img" src="fancam36.jpg" alt="Fancam Image 36">
-    </a>
-	<a href="https://www.youtube.com/watch?v=cLCWXk-ZmNg" target="_blank">
-        <img class="scrollable-img" src="fancam37.jpg" alt="Fancam Image 37">
-    </a>
-	<a href="https://www.youtube.com/watch?v=EHhY_eb92qU" target="_blank">
-        <img class="scrollable-img" src="fancam38.jpg" alt="Fancam Image 38">
-    </a>
-	<a href="https://www.youtube.com/watch?v=3z_AwwGUJDg" target="_blank">
-        <img class="scrollable-img" src="fancam39.jpg" alt="Fancam Image 39">
-    </a>
-	<a href="https://www.youtube.com/watch?v=HLAW4LB2RHE" target="_blank">
-        <img class="scrollable-img" src="fancam40.jpg" alt="Fancam Image 40">
-    </a>
-	<a href="https://www.youtube.com/watch?v=P9OcwsuBb-0" target="_blank">
-        <img class="scrollable-img" src="fancam41.jpg" alt="Fancam Image 41">
-    </a>
-	<a href="https://www.youtube.com/watch?v=NSGcKr-UCPM" target="_blank">
-        <img class="scrollable-img" src="fancam42.jpg" alt="Fancam Image 42">
-    </a>
-	<a href="https://www.youtube.com/watch?v=6TvZsAOCcTM" target="_blank">
-        <img class="scrollable-img" src="fancam43.jpg" alt="Fancam Image 43">
-    </a>
-	<a href="https://www.youtube.com/watch?v=ym1lkn7aAHs" target="_blank">
-        <img class="scrollable-img" src="fancam44.jpg" alt="Fancam Image 44">
-    </a>
-	<a href="https://www.youtube.com/watch?v=w3YhQCBCV3A" target="_blank">
-        <img class="scrollable-img" src="fancam45.jpg" alt="Fancam Image 45">
-    </a>
-
-</div>
-
-
-
-</body>
+    <div class="scrollable-content">
+      <a href="https://www.youtube.com/watch?v=10SE_iJJF9M" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam1.jpg"
+          alt="Fancam Image 1"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=elfki-gIyJs" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam2.jpg"
+          alt="Fancam Image 2"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=x_Iwj5zMu6I" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam3.jpg"
+          alt="Fancam Image 3"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=lZcqGxQBJuo" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam4.jpg"
+          alt="Fancam Image 4"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=6B_py6w-3PE" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam5.jpg"
+          alt="Fancam Image 5"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=UkxSNLRqJ7s" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam6.jpg"
+          alt="Fancam Image 6"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=ShkS_yO40oQ'" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam7.jpg"
+          alt="Fancam Image 7"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=KPU23-T2y6I" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam8.jpg"
+          alt="Fancam Image 8"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=GPcsnWvRv3U" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam9.jpg"
+          alt="Fancam Image 9"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=tfnEmJBQYbw" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam10.jpg"
+          alt="Fancam Image 10"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=4woSpoYNiFk" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam11.jpg"
+          alt="Fancam Image 11"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=StaKxxSnUD8" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam12.jpg"
+          alt="Fancam Image 12"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=IJHqvfauu2M" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam13.jpg"
+          alt="Fancam Image 13"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=4OD5qteK6HE" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam14.jpg"
+          alt="Fancam Image 14"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=eIaTOYQxuiE" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam15.jpg"
+          alt="Fancam Image 15"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=oQ6cUaRFds0" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam16.jpg"
+          alt="Fancam Image 16"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=9Wo18DywxAQ" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam17.jpg"
+          alt="Fancam Image 17"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=7eAj6QPdl4Q" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam18.jpg"
+          alt="Fancam Image 18"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=wH82Vk7GjYk" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam19.jpg"
+          alt="Fancam Image 19"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=pWyNm3oiwZo" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam20.jpg"
+          alt="Fancam Image 20"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=wJBZ54iJHm4" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam21.jpg"
+          alt="Fancam Image 21"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=krljbcXvjzs" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam22.jpg"
+          alt="Fancam Image 22"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=gMvyk9SLdX4" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam23.jpg"
+          alt="Fancam Image 23"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=XpiXwAox8HY" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam24.jpg"
+          alt="Fancam Image 24"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=ZklZ0887FsQ" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam25.jpg"
+          alt="Fancam Image 25"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=oGhQ0aXsPtY" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam26.jpg"
+          alt="Fancam Image 26"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=XVfdqLrF_X8" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam27.jpg"
+          alt="Fancam Image 27"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=vo1wMe1ukCY" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam28.jpg"
+          alt="Fancam Image 28"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=1p_8pfqWWCg" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam29.jpg"
+          alt="Fancam Image 29"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=i1FSc3zQHRk" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam30.jpg"
+          alt="Fancam Image 30"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=b1MJnQy6u5I" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam31.jpg"
+          alt="Fancam Image 31"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=xSycd-0Nkp4" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam32.jpg"
+          alt="Fancam Image 32"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=bxxCbRKfjHs" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam33.jpg"
+          alt="Fancam Image 33"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=yU2pxgFV4ko" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam34.jpg"
+          alt="Fancam Image 34"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=tSVFzRv7jYA" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam35.jpg"
+          alt="Fancam Image 35"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=JahA0jrhQIk" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam36.jpg"
+          alt="Fancam Image 36"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=cLCWXk-ZmNg" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam37.jpg"
+          alt="Fancam Image 37"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=EHhY_eb92qU" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam38.jpg"
+          alt="Fancam Image 38"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=3z_AwwGUJDg" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam39.jpg"
+          alt="Fancam Image 39"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=HLAW4LB2RHE" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam40.jpg"
+          alt="Fancam Image 40"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=P9OcwsuBb-0" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam41.jpg"
+          alt="Fancam Image 41"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=NSGcKr-UCPM" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam42.jpg"
+          alt="Fancam Image 42"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=6TvZsAOCcTM" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam43.jpg"
+          alt="Fancam Image 43"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=ym1lkn7aAHs" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam44.jpg"
+          alt="Fancam Image 44"
+        />
+      </a>
+      <a href="https://www.youtube.com/watch?v=w3YhQCBCV3A" target="_blank">
+        <img
+          class="scrollable-img"
+          src="images/fancam/fancam45.jpg"
+          alt="Fancam Image 45"
+        />
+      </a>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
 </html>
-
