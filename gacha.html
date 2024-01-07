@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gacha Container</title>
+    <style>
+        #videoContainer {
+            position: relative;
+            width: 100%;
+            max-width: 100vw;
+            height: 100vh;
+            display: block;
+            margin: 0 auto; 
+            overflow: hidden;
+        }
+
+        #overlayImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoContainer">
+        <video controls width="100%" height="100%" onclick="toggleVideo()">
+            <source src="example.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img id="overlayImage" src="" alt="Random Image">
+    </div>
+
+    <script>
+        function toggleVideo() {
+            var video = document.querySelector('video');
+
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function showRandomImage() {
+            // 이미지 배열 - 필요에 따라 추가 또는 수정 가능
+            var images = [
+                "image1.jpg",
+                "image2.jpg",
+                "image3.jpg"
+                // 추가 이미지 경로들
+            ];
+
+            // 랜덤 이미지 선택
+            var randomIndex = Math.floor(Math.random() * images.length);
+            var randomImage = images[randomIndex];
+
+            // 이미지 레이어에 표시
+            var overlayImage = document.getElementById("overlayImage");
+            overlayImage.src = randomImage;
+            overlayImage.style.display = "block";
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>twitter-page</title>
+	
+		<script>
+        function toggleMenu() {
+            var sidebar = document.querySelector('.sidebar');
+            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+        }
+		
+		function changePage(page) {
+        console.log("Change to " + page + " page");
+
+        var contentContainer = document.getElementById("contentContainer");
+        var profileContainer = document.getElementById("profileContainer");
+		var twitterContainer = document.getElementById("twitterContainer");
+        var weverseContainer = document.getElementById("weverseContainer");
+		var fancamContainer = document.getElementById("fancamContainer");
+        var interviewContainer = document.getElementById("interviewContainer");
+		var gachaContainer = document.getElementById("gachaContainer");
+		var mainVideo = document.getElementById("mainVideo");
+
+        switch (page) {
+            case 'profile':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "block";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+			case 'twitter':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "block";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+            case 'weverse':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "block";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+			case 'fancam':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "block";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+            case 'interview':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "block";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+			case 'gacha':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "block";
+				mainVideo.style.display = "none";
+                break;
+            default:
+                contentContainer.style.display = "block";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+                weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+                interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "block";
+                break;
+        }
+    }
+    </script>
+
+	
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url('twitterpage.MP4'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+			font-weight: bold;
+        }
+        .link {
+            font-size: 20px;
+            text-decoration: none;
+            display: block;
+            margin: 15px 0;
+            color: #ffffff;
+        }
+		
+        .mobile_btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        #hamburger {
+            display: none;
+        }
+
+        label {
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        label span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #4169e1;
+            margin: 5px 0;
+            transition: 0.4s;
+            border-top: none;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            text-align: center;
+            border-top: none;
+			margin-left: 0;
+        }
+
+        .sidebar h2 {
+            color: #5f9ea0;
+            border-top: none;
+        }
+
+        .nav_mobile {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 23px; /* 글자 크기 조절 */
+            font-weight: bold; /* 굵기 조절 */
+            border-top: none;
+        }
+
+        .nav_mobile li {
+            padding: 15px;
+            border-bottom: none;
+        }
+
+        .nav_mobile a {
+            color: #000000;
+            text-decoration: none;
+            border-top: none;
+        }
+		.sidebar hr {
+             margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mobile_btn">
+    <input type="checkbox" id="hamburger" onchange="toggleMenu()" />
+    <label for="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <div class="sidebar">
+        <hr>
+        <ul class="nav_mobile">
+		    <li><a href="index.html">Home</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+    <a href="2306twitter.html" class="link">~Room 2306~</a>
+    <a href="2307twitter.html" class="link">~Room 2307~</a>
+    <a href="2308twitter.html" class="link">~Room 2308~</a>
+    <a href="2309twitter.html" class="link">~Room 2309~</a>
+    <a href="2310twitter.html" class="link">~Room 2310~</a>
+	<a href="2311twitter.html" class="link">~Room 2311~</a>
+	<a href="2312twitter.html" class="link">~Room 2312~</a>
+</body>
+</html>

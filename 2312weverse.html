@@ -1,0 +1,284 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2312weverse</title>
+	
+	<script>
+        function toggleMenu() {
+            var sidebar = document.querySelector('.sidebar');
+            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+        }
+		
+		function changePage(page) {
+        console.log("Change to " + page + " page");
+
+        var contentContainer = document.getElementById("contentContainer");
+        var profileContainer = document.getElementById("profileContainer");
+		var twitterContainer = document.getElementById("twitterContainer");
+        var weverseContainer = document.getElementById("weverseContainer");
+		var fancamContainer = document.getElementById("fancamContainer");
+        var interviewContainer = document.getElementById("interviewContainer");
+		var gachaContainer = document.getElementById("gachaContainer");
+		var mainVideo = document.getElementById("mainVideo");
+
+        switch (page) {
+            case 'profile':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "block";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+			case 'twitter':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "block";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+            case 'weverse':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "block";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+			case 'fancam':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "block";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+            case 'interview':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "block";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "none";
+                break;
+			case 'gacha':
+                contentContainer.style.display = "none";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+				weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+				interviewContainer.style.display = "none";
+				gachaContainer.style.display = "block";
+				mainVideo.style.display = "none";
+                break;
+            default:
+                contentContainer.style.display = "block";
+                profileContainer.style.display = "none";
+				twitterContainer.style.display = "none";
+                weverseContainer.style.display = "none";
+				fancamContainer.style.display = "none";
+                interviewContainer.style.display = "none";
+				gachaContainer.style.display = "none";
+				mainVideo.style.display = "block";
+                break;
+        }
+    }
+    </script>
+	
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0; /* 여백을 0으로 설정 */
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            overflow-y: scroll;
+	height: auto;
+            max-height: 100vh;
+            justify-content: center; /* 가로 중앙 정렬 추가 */
+            align-items: center; /* 세로 중앙 정렬 추가 */
+			margin-bottom: 50px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            display: block;
+        }
+
+        .image-container a {
+            display: block; /* 링크 간 여백 제거를 위해 추가 */
+        }
+
+        .mobile_btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        #hamburger {
+            display: none;
+        }
+
+        label {
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        label span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #4169e1;
+            margin: 5px 0;
+            transition: 0.4s;
+            border-top: none;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            text-align: center;
+            border-top: none;
+			margin-left: 0;
+        }
+
+        .sidebar h2 {
+            color: #5f9ea0;
+            border-top: none;
+        }
+
+        .nav_mobile {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 23px; /* 글자 크기 조절 */
+            font-weight: bold; /* 굵기 조절 */
+            border-top: none;
+        }
+
+        .nav_mobile li {
+            padding: 15px;
+            border-bottom: none;
+        }
+
+        .nav_mobile a {
+            color: #000000;
+            text-decoration: none;
+            border-top: none;
+        }
+		.sidebar hr {
+             margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mobile_btn">
+    <input type="checkbox" id="hamburger" onchange="toggleMenu()" />
+    <label for="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <div class="sidebar">
+        <hr>
+        <ul class="nav_mobile">
+		    <li><a href="index.html">Home</a></li>
+        </ul>
+    </div>
+</div>
+
+    <div class="image-container">
+        <a href="https://weverse.io/boynextdoor/artist/4-141523288?hl=ko" target="_blank">
+            <img src="w231201.jpg" alt="Image 1">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/4-141653819?hl=ko" target="_blank">
+            <img src="w231202.jpg" alt="Image 2">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/1-130596480?hl=ko" target="_blank">
+            <img src="w231204-1.jpg" alt="Image 3">
+        </a>
+
+        <a href="https://weverse.io/boynextdoor/artist/2-130668362?hl=ko" target="_blank">
+            <img src="w231204-2.jpg" alt="Image 1">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/0-130755903?hl=ko" target="_blank">
+            <img src="w231207.jpg" alt="Image 2">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/3-142452921?hl=ko" target="_blank">
+            <img src="w231208.jpg" alt="Image 3">
+        </a>
+
+        <a href="https://weverse.io/boynextdoor/artist/0-131259243?hl=ko" target="_blank">
+            <img src="w231215.jpg" alt="Image 1">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/1-131644340?hl=ko" target="_blank">
+            <img src="w231222.jpg" alt="Image 2">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/4-144080068?hl=ko" target="_blank">
+            <img src="w231224-1.jpg" alt="Image 3">
+        </a>
+
+        <a href="https://weverse.io/boynextdoor/artist/3-144124342?hl=ko" target="_blank">
+            <img src="w231224-2.jpg" alt="Image 1">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/3-144343108?hl=ko" target="_blank">
+            <img src="w231225.jpg" alt="Image 2">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/0-132013648?hl=ko" target="_blank">
+            <img src="w231229.jpg" alt="Image 3">
+        </a>
+
+        <a href="https://weverse.io/boynextdoor/artist/4-145084564?hl=ko" target="_blank">
+            <img src="w231230.jpg" alt="Image 1">
+        </a>
+        <a href="https://weverse.io/boynextdoor/artist/3-145098666?hl=ko" target="_blank">
+            <img src="w231230-2.jpg" alt="Image 2">
+        </a>
+        <a href="https://weverse.io/boynextdoor/feed" target="_blank">
+            <img src="tblank.JPG" alt="Image 3">
+        </a>
+
+
+
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
