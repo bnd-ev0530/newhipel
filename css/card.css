@@ -1,0 +1,471 @@
+@import "variables.css";
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0 auto;
+  font-family: "Arial", "Noto Sans KR", sans-serif;
+  /* font-family: "Neo둥근모", "neodgm"; */
+  display: flex;
+  align-items: center;
+  max-width: 768px;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  box-sizing: border-box;
+}
+section {
+  width: 100%;
+  display: none;
+}
+button {
+  all: unset;
+}
+.form-btn {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn-groups {
+  display: flex;
+  gap: 10px;
+}
+
+input:not([type="radio"], [type="date"]) {
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 15px;
+  letter-spacing: -0.25pt;
+  -webkit-padding-before: 3px;
+  padding-block-start: 3px;
+  border-radius: 4px;
+  padding-left: 10px;
+  outline: none;
+}
+
+input[type="date"] {
+  width: 0;
+  min-width: 60%;
+  height: 16px;
+  padding: 10px;
+}
+
+/* input::placeholder {
+  color: aliceblue;
+} */
+header {
+  margin: 10px 0;
+}
+
+.sub-tit {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+.right-top {
+  position: relative;
+  margin: 0 0 20px 0;
+}
+
+.right-bottom {
+  position: relative;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.running {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  position: relative;
+  margin: 10px 0 20px;
+}
+.running a {
+  text-decoration: none;
+  color: #fff;
+}
+.opening {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  z-index: 2;
+  background-color: #fff;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-out, visibility 0s 1s;
+}
+
+.opening img {
+  width: 100%;
+}
+.opening button {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #00aeff;
+  font-size: 20px;
+  text-align: center;
+  padding: 15px 0;
+  color: #fff;
+}
+.logo {
+  width: 100%;
+}
+.logo img {
+  width: 100%;
+}
+.hiddenAnimation {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in, visibility 0s 1s;
+}
+.layout-box {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  margin: 10px 0 20px;
+}
+.layout-box .layout-box__btn {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 25px 20px;
+  color: aliceblue;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.layout-box .layout-box__btn:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.layout-box a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#submit {
+  cursor: pointer;
+  background-image: url(../images/card/get.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 51vw;
+  border: none;
+  max-width: 100%;
+  animation: fadeIn 1.2s forwards;
+}
+
+label {
+  margin-bottom: 20px;
+}
+ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  margin: 0;
+  padding: 0;
+}
+
+input[type="radio"] {
+  display: inline-block;
+}
+.container {
+  width: 100%;
+  margin: 20px 0 60px;
+}
+
+#photo-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#photo-container > div {
+  width: 42vw;
+  margin-right: 10px;
+}
+#photo-container > div:nth-child(2n) {
+  margin-right: 0;
+}
+
+#photo-container img {
+  width: 100%;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #f6f6f6;
+}
+
+.song-container > div {
+  margin-bottom: 10px;
+}
+
+#video-container img {
+  width: 100%;
+  display: block;
+  margin-top: 5px;
+  border-radius: 8px;
+}
+#video-container > div {
+  margin-bottom: 15px;
+}
+
+.date-container {
+  display: flex;
+  justify-content: center;
+}
+
+.result-card {
+  background-image: url("../images/idcard/bb2f3f477022bd0c89df2318987dd7f5.jpg");
+  height: 241px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: contain;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.result-video {
+  background-image: url("../images/idcard/1b06d3ed17e94d2f824a017dcf715433.jpg");
+  height: 241px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: contain;
+  margin-bottom: 20px;
+  position: relative;
+}
+.result-list li {
+  position: absolute;
+}
+.result-list #fileResult div {
+  position: absolute;
+  width: 7vw;
+  height: 9vw;
+  border: 1px solid;
+  overflow: hidden;
+  top: 3vw;
+  left: 1vw;
+}
+.result-list #nameResult,
+.result-list #songResult,
+.result-list #dateResult {
+  position: absolute;
+  right: 20px;
+}
+
+.result-list #nameResult {
+  top: 14vw;
+}
+
+.result-list #songResult {
+  top: 32vw;
+}
+.result-list #dateResult {
+  top: 21vw;
+  background: white;
+}
+.result-video > div > a > div {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+  width: 13vw;
+  height: 100%;
+  background: red;
+  border-radius: 40px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.result-video p {
+  position: absolute;
+  bottom: -4vw;
+}
+
+#result-area {
+  display: none;
+}
+.image-circle {
+  border-radius: 50%;
+}
+.showing {
+  display: block !important;
+  margin: 70px 0 100px;
+  width: 100%;
+  position: relative;
+}
+.btn-groups {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+.btn-groups > button {
+  all: unset;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50vw;
+  height: 25vw;
+  border: none;
+}
+.next-btn {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #00aeff;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 0;
+  color: #fff;
+}
+#saveButton {
+  background-image: url("../images/card/download.png");
+}
+#shareButton {
+  background-image: url("../images/card/share.png");
+}
+canvas {
+  width: 100%;
+  position: relative;
+}
+.finish-img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+.quiz-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 1s forwards;
+}
+.status {
+  height: 20px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  margin: 20px 0 40px;
+  border: 1px solid #ebebeb;
+}
+
+.statusBar {
+  height: 100%;
+  border-radius: 20px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+52,ff5c5c+100;Red+3D+%231 */
+  background: #00b3ff;
+  /* Old browsers */
+  /*background: -moz-linear-gradient(top, #febbbb 0%, #fe9090 52%, #ff5c5c 100%);*/
+  /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(
+    top,
+    #febbbb 0%,
+    #fe9090 52%,
+    #ff5c5c 100%
+  );*/
+  /* Chrome10-25,Safari5.1-6 */
+  /*background: linear-gradient(to bottom, #febbbb 0%, #fe9090 52%, #ff5c5c 100%);*/
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febbbb', endColorstr='#ff5c5c', GradientType=0);
+  /* IE6-9 */
+}
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .result-card {
+    background-image: url("../images/idcard/bb2f3f477022bd0c89df2318987dd7f5.jpg");
+    height: 241px;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: contain;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .result-video {
+    background-image: url("../images/idcard/1b06d3ed17e94d2f824a017dcf715433.jpg");
+    height: 241px;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: contain;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .result-list li {
+    position: absolute;
+  }
+  .result-list #fileResult div {
+    position: absolute;
+    width: 32vw;
+    height: 39vw;
+    border: 1px solid;
+    overflow: hidden;
+    top: 13vw;
+    left: 5vw;
+  }
+  .result-list #nameResult,
+  .result-list #songResult,
+  .result-list #dateResult {
+    position: absolute;
+    right: 20px;
+  }
+
+  .result-list #nameResult {
+    top: 14vw;
+  }
+
+  .result-list #songResult {
+    top: 32vw;
+  }
+  .result-list #dateResult {
+    top: 21vw;
+    background: white;
+  }
+  .result-video > div > a > div {
+    position: absolute;
+    top: 8vw;
+    left: 5vw;
+    width: 60vw;
+    height: 45vw;
+    background: red;
+    border-radius: 40px;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+  }
+
+  .result-video p {
+    position: absolute;
+    bottom: -12vw;
+  }
+}

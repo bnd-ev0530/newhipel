@@ -58,6 +58,7 @@ label span {
 
 .sidebar.active {
   width: 250px;
+  border-right: 1px solid #ddd;
 }
 
 .nav_mobile {
@@ -81,15 +82,19 @@ label span {
 }
 
 .close_btn {
-  background-color: #333;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  background: #fff;
 }
-
-.close_btn:hover {
-  background-color: #555;
+.close_btn img {
+  width: 16px;
 }
 
 #no-mobile {

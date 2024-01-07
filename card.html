@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+    initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta property="og:url" content="https://NEWHIPBOY.com/card.html" />
+    <meta property="og:title" content="내가 좋아하는 2023 태산은?" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/idcard/default.png" />
+    <meta
+      property="og:description"
+      content="내가 좋아하는 2023 태산을 만들어 보세요"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="내가 좋아하는 2023 태산은?" />
+    <meta
+      name="twitter:description"
+      content="내가 좋아하는 2023 태산을 만들어 보세요"
+    />
+    <meta name="twitter:image" content="images/idcard/default.png" />
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="" />
+    <title>2024 year end</title>
+    <link rel="stylesheet" href="https://unpkg.com/@kfonts/neodgm/index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+  </head>
+  <body>
+    <header class="title"></header>
+    <div class="opening" id="opening">
+      <img src="images/card/mainpage.png" />
+      <!--<button class="btn">Make Start</button>-->
+    </div>
+    <div class="mobile_btn">
+      <input type="checkbox" id="hamburger" />
+      <label for="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="sidebar">
+        <button class="close_btn" id="closeButton">
+          <img src="images/close.png" class="close-img" />
+        </button>
+        <ul class="nav_mobile">
+          <li><a href="/">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="twitter.html">Twitter</a></li>
+          <li><a href="weverse.html">Weverse</a></li>
+          <li><a href="fancam.html">Fancam</a></li>
+          <li><a href="interview.html">Interview</a></li>
+          <li><a href="gacha.html">Gacha</a></li>
+          <li><a href="card.html">Card</a></li>
+        </ul>
+      </div>
+    </div>
+    <section class="hidden" id="section">
+      <div class="logo" onclick="location.href=''">
+        <img src="images/card/logo.png" />
+      </div>
+      <div class="status mx-auto mt-5">
+        <div class="statusBar"></div>
+      </div>
+      <form id="login-form">
+        <div id="question1" class="quiz-box">
+          1. 이름을 입력하세요.
+          <div class="name-container container">
+            <input
+              type="text"
+              placeholder="Insert your name!"
+              maxlength="10"
+              id="nickname"
+              required
+              name="nickname"
+            />
+          </div>
+        </div>
+        <div id="question2" class="quiz-box hidden">
+          2. 가장 좋아하는 태산의 사진을 선택하세요.
+          <div id="photo-container" class="container"></div>
+        </div>
+        <div id="question3" class="quiz-box hidden">
+          3. 가장 좋아하는 태산의 곡을 선택하세요.
+
+          <div class="song-container container">
+            <div>
+              <input
+                type="radio"
+                id="song1"
+                name="song"
+                value="돌아버리겠다"
+                checked
+              />
+              <label for="song1">돌아버리겠다</label>
+            </div>
+            <div>
+              <input type="radio" id="song2" name="song" value="One and Only" />
+              <label for="song2">One and Only</label>
+            </div>
+            <div>
+              <input type="radio" id="song3" name="song" value="Serenade" />
+              <label for="song3">Serenade</label>
+            </div>
+            <div>
+              <input type="radio" id="song4" name="song" value="뭣 같아" />
+              <label for="song4">뭣 같아</label>
+            </div>
+            <div>
+              <input type="radio" id="song5" name="song" value="Crying" />
+              <label for="song5">Crying</label>
+            </div>
+            <div>
+              <input type="radio" id="song6" name="song" value="ABCDLOVE" />
+              <label for="song6">ABCDLOVE</label>
+            </div>
+            <div>
+              <input type="radio" id="song7" name="song" value="Fadeaway" />
+              <label for="song7">Fadeaway</label>
+            </div>
+          </div>
+        </div>
+        <div id="question4" class="quiz-box hidden">
+          4. 가장 좋아하는 태산의 직캠을 선택하세요.
+
+          <div id="video-container" class="container"></div>
+        </div>
+        <div id="question5" class="quiz-box hidden">
+          5. 태산을 좋아하게 된 날짜를 입력하세요.
+          <div class="date-container container">
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value="2023-12-29"
+              min="2023-04-01"
+              max="2024-12-31"
+            />
+          </div>
+        </div>
+        <button
+          type="button"
+          value="다음"
+          onclick="nextQuiz()"
+          id="next-btn"
+          class="next-btn"
+        >
+          다음
+        </button>
+
+        <div class="form-btn hidden" id="finish-form">
+          <button type="submit" value="확인" id="submit"></button>
+        </div>
+      </form>
+
+      <div id="result-area">
+        <canvas id="myCanvas"></canvas>
+
+        <!-- <img src="" id="finish-img" />-->
+
+        <div class="btn-groups">
+          <button id="saveButton"></button>
+          <button id="shareButton"></button>
+        </div>
+        <!--
+        <button
+          type="button"
+          onclick="location.href=''"
+          id="next-btn"
+          class="next-btn"
+        >
+          다시 만들기
+        </button>-->
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery UI Library -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#datepicker").datepicker({
+          dateFormat: "yy-mm-dd", // Set the date format
+          defaultDate: new Date(), // Set the default date
+          onSelect: function (dateText, inst) {
+            // Handle date selection
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
