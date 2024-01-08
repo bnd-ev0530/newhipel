@@ -166,7 +166,7 @@ videos.forEach((video, index) => {
   const img = document.createElement("img");
   img.id = video.id;
 
-  img.src = `../images/card/fancam/${video.thumb}`;
+  img.src = `images/card/fancam/${video.thumb}`;
   //   console.log(img);
 
   // Append radio button and label to container
@@ -199,7 +199,7 @@ photos.forEach((photo, index) => {
 
   const img = document.createElement("img");
 
-  img.src = `../images/card/photo/${photo.photo}`;
+  img.src = `images/card/photo/${photo.photo}`;
   img.id = photo.id;
 
   // Append radio button and label to container
@@ -228,7 +228,7 @@ function findphotoCard() {
     //console.log("photoCard : " + photoCard);
     //finishImg.src = photoCard;
     const bgImage = document.createElement("img");
-    bgImage.src = `../images/card/bgcard/${photoCard}`;
+    bgImage.src = `images/card/bgcard/${photoCard}`;
 
     //console.log(bgImage);
     bgImage.onload = function () {
@@ -287,7 +287,7 @@ function findFancam() {
 
   //qr 그리기
   const qrImage = new Image();
-  qrImage.src = `../images/card/qrcode/${foundVideo.qrcode}`;
+  qrImage.src = `images/card/qrcode/${foundVideo.qrcode}`;
   qrImage.onload = function () {
     ctx.drawImage(qrImage, 2585, 1526, 350, 350);
   };
