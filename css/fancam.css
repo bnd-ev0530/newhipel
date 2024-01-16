@@ -95,9 +95,30 @@ label span {
   font-weight: 600;
   font-size: 20px;
 }
-
+/*
 @media screen and (max-width: 645px) {
   #no-mobile {
     display: none;
+  }
+}
+*/
+@media only screen and (min-width: 769px) {
+  body {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    display: block;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
   }
 }

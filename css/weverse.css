@@ -23,3 +23,19 @@ body {
   object-fit: cover;
   z-index: 2;
 }
+
+@media only screen and (min-width: 769px) {
+  body {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    position: relative;
+  }
+
+  .weversephone-image {
+    width: 100vh;
+    height: auto;
+  }
+}

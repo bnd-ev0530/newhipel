@@ -27,3 +27,16 @@
   object-fit: cover;
   z-index: 2;
 }
+
+@media only screen and (min-width: 769px) {
+  .background-image {
+    left: 50%;
+    max-width: 780px;
+    height: auto;
+    transform: translateX(-50%);
+  }
+  .fixed-image {
+    width: 100vh;
+    height: auto;
+  }
+}
