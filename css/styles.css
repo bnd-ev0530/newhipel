@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden; /* 가로 스크롤을 숨김 */
-  max-width: 780px;
+  max-width: 490px;
   width: 100%;
 }
 .main-background {
@@ -126,11 +126,10 @@ label span {
 } */
 @media only screen and (min-width: 769px) {
   body {
-    max-width: 780px;
+    max-width: 490px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
     position: relative;
   }
 

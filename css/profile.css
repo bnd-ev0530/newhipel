@@ -30,13 +30,22 @@
 
 @media only screen and (min-width: 769px) {
   .background-image {
-    left: 50%;
-    max-width: 780px;
+    width: 490px;
     height: auto;
+    left: 50%;
     transform: translateX(-50%);
   }
   .fixed-image {
-    width: 100vh;
+    width: 490px;
     height: auto;
+  }
+  .scrollable-content img {
+    position: absolute;
+    width: 490px;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    z-index: 1;
   }
 }

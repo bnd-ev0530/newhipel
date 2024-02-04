@@ -472,11 +472,10 @@ canvas {
 
 @media only screen and (min-width: 769px) {
   body {
-    max-width: 780px;
+    max-width: 490px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
     position: relative;
   }
   body::before {
@@ -494,7 +493,7 @@ canvas {
     height: 100vh;
   }
   .opening {
-    width: 780px;
+    width: 490px;
   }
   .opening img {
     width: 57vh;
@@ -508,13 +507,13 @@ canvas {
   }
   #submit {
     display: flex;
-    width: 738px;
-    height: 404px;
+    width: 490px;
+    height: 248px;
   }
   .next-btn {
     position: fixed;
     width: 100%;
-    max-width: 780px;
+    max-width: 490px;
     transform: translateX(-50%);
     left: 50%;
   }
