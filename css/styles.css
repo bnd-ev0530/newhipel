@@ -106,7 +106,7 @@ label span {
 }
 
 #no-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 1001;
   width: 100vw;
@@ -117,13 +117,14 @@ label span {
   align-items: center;
   font-weight: 600;
   font-size: 20px;
+  left: 0;
 }
 
-/* @media screen and (max-width: 645px) {
+@media screen and (max-width: 645px) {
   #no-mobile {
     display: none;
   }
-} */
+}
 @media only screen and (min-width: 769px) {
   body {
     max-width: 490px;
